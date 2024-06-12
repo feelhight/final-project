@@ -1,2 +1,2 @@
-package com.example.finalproject.dtos;public class EstateDto {
+package com.example.finalproject.dtos;public class estateDto {
 }
