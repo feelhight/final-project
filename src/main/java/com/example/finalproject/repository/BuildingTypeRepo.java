@@ -10,4 +10,5 @@ import java.util.List;
 public interface BuildingTypeRepo extends JpaRepository<BuildingType,Integer> {
     @Override
     List<BuildingType> findAll();
+
 }

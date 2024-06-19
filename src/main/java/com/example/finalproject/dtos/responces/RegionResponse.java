@@ -1,4 +1,4 @@
-package com.example.finalproject.responces;
+package com.example.finalproject.dtos.responces;
 
 import com.example.finalproject.models.Region;
 import jakarta.persistence.UniqueConstraint;

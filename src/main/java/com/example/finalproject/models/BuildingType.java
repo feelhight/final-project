@@ -1,5 +1,6 @@
 package com.example.finalproject.models;
 
+import com.fasterxml.jackson.annotation.JsonValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,8 +18,12 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class BuildingType {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     Integer id;
+    @JsonValue
     String name;
     boolean active = true;
+
+    public BuildingType(Integer id) {
+        this.id = id;
+    }
 }

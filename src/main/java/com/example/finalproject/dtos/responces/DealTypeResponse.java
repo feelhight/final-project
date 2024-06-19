@@ -1,4 +1,4 @@
-package com.example.finalproject.responces;
+package com.example.finalproject.dtos.responces;
 
 import java.util.List;
 

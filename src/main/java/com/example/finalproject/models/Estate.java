@@ -3,13 +3,11 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
-import org.hibernate.procedure.internal.ProcedureParamBindings;
 
 @Entity(name = "estate")
 @Setter
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
 @Accessors(chain = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Estate {
@@ -20,8 +18,8 @@ public class Estate {
     Integer floor;
     String houseNum;
     boolean active = true;
-    boolean price;
-    String price_type;
+    double price;
+    String priceType;
     @ManyToOne
     @JoinColumn(name = "building_type_id")
     BuildingType buildingType;
@@ -59,4 +57,23 @@ public class Estate {
     @JoinColumn(name = "state_id")
     State state;
 
+    public Estate(Integer buildingYear, Integer floor, String houseNum, double price,String priceType,BuildingType buildingType, DealType dealType, EstateType estateType, Heating heating, InstallmentPlan installmentPlan, Mortgage mortgage, PossibilityOfExchange possibilityOfExchange, Region region, ResidentialComplex residentialComplex, Rooms rooms, Series series, State state) {
+        this.buildingYear = buildingYear;
+        this.floor = floor;
+        this.houseNum = houseNum;
+        this.price = price;
+        this.priceType = priceType;
+        this.buildingType = buildingType;
+        this.dealType = dealType;
+        this.estateType = estateType;
+        this.heating = heating;
+        this.installmentPlan = installmentPlan;
+        this.mortgage = mortgage;
+        this.possibilityOfExchange = possibilityOfExchange;
+        this.region = region;
+        this.residentialComplex = residentialComplex;
+        this.rooms = rooms;
+        this.series = series;
+        this.state = state;
+    }
 }

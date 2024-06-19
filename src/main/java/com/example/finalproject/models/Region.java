@@ -1,12 +1,12 @@
 package com.example.finalproject.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonValue;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.Accessors;
 import lombok.experimental.FieldDefaults;
+
+import java.util.List;
 
 @Entity(name = "region")
 @Setter
@@ -16,13 +16,24 @@ import lombok.experimental.FieldDefaults;
 @Accessors(chain = true)
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Region {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     Integer id;
+
+    public Region(Integer id, String name, String city) {
+        this.id = id;
+        this.name = name;
+        this.city = city;
+    }
     String name;
     String city;
-    String district;
     String street;
-    String homeNum;
+    Integer cityId;
+    Integer regionId;
     boolean active = true;
+
+    public Region(int id,String street) {
+        this.id = id;
+        this.street = street;
+    }
 }
